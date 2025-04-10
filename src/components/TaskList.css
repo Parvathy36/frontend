@@ -1,0 +1,104 @@
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .task-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: box-shadow 0.2s ease;
+    margin-top: 10px;
+
+  }
+  
+  .task-item:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .task-item.completed {
+    background-color: #f9f9f9;
+  }
+  
+  .toggle-btn {
+    margin-right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.2s;
+  }
+  
+  .toggle-btn:hover {
+    color: #28a745;
+  }
+  
+  .completed-icon {
+    color: #28a745;
+  }
+  
+  .edit-input {
+    flex: 1;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .task-text {
+    flex: 1;
+    color: #333;
+  }
+  
+  .line-through {
+    text-decoration: line-through;
+    color: #999;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  
+  .task-item:hover .action-buttons {
+    opacity: 1;
+  }
+  
+  .action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    transition: color 0.2s;
+  }
+  
+  .save-button {
+    color: #28a745;
+  }
+  
+  .save-button:hover {
+    color: #218838;
+  }
+  
+  .edit-button {
+    color: #007bff;
+  }
+  
+  .edit-button:hover {
+    color: #0056b3;
+  }
+  
+  .delete-button {
+    color: #dc3545;
+  }
+  
+  .delete-button:hover {
+    color: #c82333;
+  }
+  

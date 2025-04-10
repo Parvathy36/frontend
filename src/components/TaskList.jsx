@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaTrash, FaEdit, FaCheckCircle, FaRegCircle } from "react-icons/fa";
+import "./TaskList.css";
 
 export default function TaskList({ tasks, toggleTask, editTask, deleteTask }) {
   const [editingId, setEditingId] = useState(null);
@@ -16,18 +17,14 @@ export default function TaskList({ tasks, toggleTask, editTask, deleteTask }) {
   };
 
   return (
-    <div className="space-y-3">
+    <div className="task-list">
       {tasks.map((task) => (
         <div
           key={task._id}
-          className={`group flex items-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 ${
-            task.completed ? "bg-gray-50" : ""
-          }`}
+          className={`task-item ${task.completed ? "completed" : ""}`}
         >
           <button
-            className={`flex-shrink-0 mr-3 focus:outline-none transition-colors duration-200 ${
-              task.completed ? "text-green-500" : "text-gray-400 hover:text-green-500"
-            }`}
+            className={`toggle-btn ${task.completed ? "completed-icon" : ""}`}
             onClick={() => toggleTask(task._id, task.completed)}
           >
             {task.completed ? <FaCheckCircle size={20} /> : <FaRegCircle size={20} />}
@@ -36,41 +33,28 @@ export default function TaskList({ tasks, toggleTask, editTask, deleteTask }) {
           {editingId === task._id ? (
             <input
               type="text"
-              className="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              className="edit-input"
               value={editText}
               onChange={(e) => setEditText(e.target.value)}
               autoFocus
             />
           ) : (
-            <span
-              className={`flex-1 text-gray-800 ${
-                task.completed ? "line-through text-gray-500" : ""
-              }`}
-            >
+            <span className={`task-text ${task.completed ? "line-through" : ""}`}>
               {task.text}
             </span>
           )}
 
-          <div className="flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <div className="action-buttons">
             {editingId === task._id ? (
-              <button
-                className="p-2 text-green-500 hover:text-green-600 focus:outline-none"
-                onClick={() => saveEdit(task._id)}
-              >
+              <button className="action-button save-button" onClick={() => saveEdit(task._id)}>
                 <FaCheckCircle size={18} />
               </button>
             ) : (
-              <button
-                className="p-2 text-blue-500 hover:text-blue-600 focus:outline-none"
-                onClick={() => startEditing(task._id, task.text)}
-              >
+              <button className="action-button edit-button" onClick={() => startEditing(task._id, task.text)}>
                 <FaEdit size={18} />
               </button>
             )}
-            <button
-              className="p-2 text-red-500 hover:text-red-600 focus:outline-none"
-              onClick={() => deleteTask(task._id)}
-            >
+            <button className="action-button delete-button" onClick={() => deleteTask(task._id)}>
               <FaTrash size={18} />
             </button>
           </div>

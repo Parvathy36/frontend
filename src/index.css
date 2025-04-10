@@ -1,1 +1,104 @@
-@import "tailwindcss";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+h1 {
+    color: #4a4e69;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    width: 70%;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #4a4e69;
+}
+
+button.add-btn {
+    padding: 10px 15px;
+    border: none;
+    background: #4a4e69;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background 0.3s;
+}
+
+button.add-btn:hover {
+    background: #9a8c98;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f9f9f9;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+li:hover {
+    background: #e2e6ea;
+}
+
+.task-text {
+    flex-grow: 1;
+    margin-left: 15px;
+    text-align: left;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: transform 0.2s;
+}
+
+.icon-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Optional: Add icons via FontAwesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+.icon-btn i {
+    color: #4a4e69;
+    font-size: 16px;
+}

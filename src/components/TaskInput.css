@@ -1,0 +1,51 @@
+.task-form {
+    position: relative;
+  }
+  
+  .task-input {
+    width: 85%;
+    padding: 12px 16px 12px 44px;
+    color: #333;
+    background-color: #fff;
+    border: 0px;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .task-input::placeholder {
+    color: #aaa;
+  }
+  
+  .task-input:focus {
+    border-color: #a855f7;
+    box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.4);
+  }
+  
+  .task-button {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 6px;
+    border: none;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-button.active {
+    color: #a855f7;
+  }
+  
+  .task-button.active:hover {
+    color: #9333ea;
+  }
+  
+  .task-button.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+  
